@@ -17,9 +17,8 @@ module.exports = (config) => {
   config.addFilter("featured", (items) => items.filter((item) => item.data.featured));
   config.addFilter("markdown", (data) => markdownItRenderer.render(data));
   config.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
+    const date = DateTime.fromJSDate(dateObj, { zone: "utc" });
+    return date.isValid ? date.toFormat("dd LLL yyyy, HH:mm") : "";
   });
 
   // yaml

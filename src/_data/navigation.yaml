@@ -1,11 +1,15 @@
 items:
-  - text: Home
+  - text: Página Principal
     url: /
-  - text: Products
-    url: /products
-  - text: About
-    url: /pages/about-us
-  - text: Blog
-    url: /blog
-  - text: Contact
+  - text: Lista de Presentes
+    url: /gift-list
+  - text: Nossa História
+    url: /blog/about-us
+  - text: Nosso Casamento
+    url: /blog/our-wedding
+  - text: Local da Celebração
+    url: /categories/wedding-celebration
+  - text: Local da Recepção
+    url: /categories/wedding-reception
+  - text: Contato
     url: /contact

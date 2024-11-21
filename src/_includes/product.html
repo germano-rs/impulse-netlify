@@ -110,7 +110,7 @@ layout: default
 
 					<button x-on:click="addToCart" type="button" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
 						<div>Add to cart</div>
-						<div>&pound;<span x-text="(price * quantity).toFixed(2)"></span></div>
+						<div>R$ <span x-text="(price * quantity).toFixed(2)"></span></div>
 					</button>
 				</div>
 			{% endif %}

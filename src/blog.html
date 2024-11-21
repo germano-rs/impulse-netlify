@@ -15,7 +15,9 @@ layout: default
             </a>
 
             <div class="bg-gray-50 p-8">
+                {% if post.date %}
                 <div class="text-xs text-gray-600 uppercase font-semibold">{{ post.date | readableDate }}</div>
+                {% endif %}
                 <h2 class="mt-3 text-3xl mb-6 font-display text-black leading-tight max-w-sm">
                     {% if post.data.title %}
                         {{ post.data.title }}
