@@ -57,15 +57,15 @@ layout: default
 				</div>
 
 				<div class="px-6 md:px-12 py-6 text-center">
-					<p>{{ title }} has been added to your cart.</p>
+					<p>{{ title }} adicionado ao seu carrinho de presentes.</p>
 				</div>				
 
 				<div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
 					<button x-on:click="addedToCart = false" type="button" class="block text-center font-semibold px-4 py-4 bg-gray-200 text-gray-500 uppercase text-xs">
-						Continue Shopping
+						Voltar
 					</button>
 					<a href="/cart" class="block text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs">
-						Go to cart
+						Finalizar
 					</a>
 				</div>
 			</div>
@@ -109,7 +109,7 @@ layout: default
 					</div>
 
 					<button x-on:click="addToCart" type="button" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
-						<div>Add to cart</div>
+						<div>Adicione ao carrinho</div>
 						<div>R$ <span x-text="(price * quantity).toFixed(2)"></span></div>
 					</button>
 				</div>
