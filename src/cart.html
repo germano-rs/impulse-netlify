@@ -42,11 +42,11 @@ title: Shopping Cart
                 </template>
 
             </div>
+            <div class="flex justify-end"><strong><p x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</p></strong></div>
 
             <div class="flex justify-end">
                 <button onclick="paygifts()" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
                     <div>Pagar</div>
-                    <div x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</div>
                 </button>
             </div>
 
@@ -56,8 +56,8 @@ title: Shopping Cart
     <template x-if="total_quantity === 0">
         <div>
             <div class="text-center py-12 mb-12 px-6">
-                <h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">There's nothing in your cart right now</h1>
-                <p class="max-w-lg mx-auto">Go back to products page and add some.</p>
+                <h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">Não há nada ainda no carrinho de presentes aos noivos!</h1>
+                <p class="max-w-lg mx-auto">Volte para a página de presentes e escolha.</p>
             </div>
         </div>
     </template>
@@ -69,6 +69,7 @@ title: Shopping Cart
                 <div class="px-6 md:px-12 py-6 text-center">
                     <div class="px-6 md:px-12 py-6 text-center">
                         <p>Pague através da chave PIX:</p>
+                        <strong><p x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</p></strong>
                         <p>38999101373</p><p>Telefone</p>
                         <p>Beneficiária: Denise Maria Vilela Cardoso</p>
                     </div>	
@@ -83,7 +84,7 @@ title: Shopping Cart
                         </div>
                         <div class="mt-6">
                         <label class="block text-base tracking-tight text-gray-600">Mensagem aos noivos</label>
-                        <textarea name="message" placeholder="Uma mensagem de carinho é um grande presente para nós!" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
+                        <textarea name="message" rows="8" placeholder="Uma mensagem de carinho é um grande presente para nós!" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
                         </div>
 
             
