@@ -73,6 +73,17 @@ layout: default
 	<img src="{{ home.footer_cta_image }}" class="w-full h-full absolute inset-0 object-cover" />
 </div>
 {% endif %}
+{% if home.footer_cta_image2 %}
+<div class="relative w-full py-12 px-12 custom-height mt-24">
+	<div class="relative z-10 text-center py-12 md:py-24">
+		<h1 class="text-white text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-6">{{
+			home.footer_cta_title2 }}</h1>
+		<p class="text-white mb-10 text-base md:text-lg font-bold">{{ home.footer_cta_description2 }}</p>
+	</div>
+
+	<img src="{{ home.footer_cta_image2 }}" class="w-full h-full absolute inset-0 object-cover" />
+</div>
+{% endif %}
 
 {% for post in collections.blogs | limit(4) %}
 <div class="grid grid-cols-1 md:grid-cols-2">
