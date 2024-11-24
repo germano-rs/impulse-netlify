@@ -18,7 +18,7 @@ title: Shopping Cart
     <template x-if="total_quantity > 0">
         <div>
                 
-            <h1 class="text-2xl font-display text-black leading-tight">My Cart (<span x-text="total_quantity"></span>)</h1>
+            <h1 class="text-2xl font-display text-black leading-tight">Presentes aos noivos (<span x-text="total_quantity"></span>)</h1>
 
             <div class="mt-6">
 
@@ -33,7 +33,7 @@ title: Shopping Cart
                             </div>
                         </div>
                         <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 pl-4">
-                            <button x-on:click="removeProduct(product)" class="text-xs underline">Remove</button>
+                            <button x-on:click="removeProduct(product)" class="text-xs underline">Remover</button>
                             <div class="text-xs text-gray-900" x-text="product.quantity">1</div>
                             <div class="text-xs" x-text="'{{ settings.currency_symbol }}'+(product.price * product.quantity).toFixed(2)">{{ settings.currency_symbol }}0.00</div>
                         </div>
@@ -44,12 +44,8 @@ title: Shopping Cart
             </div>
 
             <div class="flex justify-end">
-                <button x-on:click="payGifts = false" type="button">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </button>
-                
                 <button onclick="paygifts()" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
-                    <div>Checkout</div>
+                    <div>Pagar</div>
                     <div x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</div>
                 </button>
             </div>
@@ -70,34 +66,32 @@ title: Shopping Cart
 
 		<div class="z-50 bg-black bg-opacity-50 fixed inset-0 w-screen min-h-screen lg:h-screen lg:flex lg:justify-center lg:items-center p-12">
 			<div class="w-full max-w-sm bg-white text-xs uppercase shadow-2xl">
+                <div class="px-6 md:px-12 py-6 text-center">
+                    <form method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                        </p>
+                        <div>
+                        <label class="block text-base tracking-tight text-gray-600">Nome</label>
+                        <input name="name" type="text" placeholder="Name" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
+                        </div>
+                        <div class="mt-6">
+                        <label class="block text-base tracking-tight text-gray-600">Mensagem aos noivos</label>
+                        <textarea name="message" placeholder="Your message" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
+                        </div>
 
-				
-            <div>
-                <form method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                    </p>
-                    <div>
-                    <label class="block text-base tracking-tight text-gray-600">Nome</label>
-                    <input name="name" type="text" placeholder="Name" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
+            
+                    <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button x-on:click="closePayGifts()" type="button" class="block text-center font-semibold px-4 py-4 bg-gray-200 text-gray-500 uppercase text-xs">
+                            Voltar
+                        </button>
+                        <button  class="block text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs">
+                            Enviar mensagem
+                        </button>
                     </div>
-                    <div class="mt-6">
-                    <label class="block text-base tracking-tight text-gray-600">Mensagem aos noivos</label>
-                    <textarea name="message" placeholder="Your message" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
-                    </div>
-
-          
-				<div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-					<button x-on:click="closePayGifts()" type="button" class="block text-center font-semibold px-4 py-4 bg-gray-200 text-gray-500 uppercase text-xs">
-						Voltar
-					</button>
-					<button  class="block text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs">
-						Enviar mensagem
-					</button>
-				</div>
-            </form>
-        </div>			
+                </form>
+            </div>			
 
 			</div>
 		</div>
