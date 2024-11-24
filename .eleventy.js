@@ -9,6 +9,7 @@ module.exports = (config) => {
     ".src/images": "./images", // images
     "./src/admin/config.yml": "./admin/config.yml", // admin config
     "./src/static": "/", // static folders/files
+    "./src/musicas": "./musicas", // pasta de músicas
   });
 
   // filters

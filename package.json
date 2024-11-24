@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "NODE_ENV=development npx tailwindcss -i src/dev.css -o _site/app.css --watch | npx @11ty/eleventy --serve",
-    "build": "NODE_ENV=production TAILWIND_MODE=build npx tailwindcss -i src/dev.css -o _site/app.css | npx @11ty/eleventy"
+    "build": "NODE_ENV=production TAILWIND_MODE=build npx tailwindcss -i src/dev.css -o _site/app.css | npx @11ty/eleventy",
+    "eleventy": "eleventy"
+
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

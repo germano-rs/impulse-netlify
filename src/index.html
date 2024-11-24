@@ -21,15 +21,17 @@ layout: default
 		}
 	}
 </style>
-
 <div class="-mt-24 relative w-full py-12 px-12 custom-height bg-yellow-900">
-	<div>
-		<audio autoplay="autoplay" controls="controls">
-			<source src="/musicas/dia_branco.mp3" type="audio/mp3" />
-			seu navegador não suporta HTML5
-		</audio>
-	</div>
+
 	<div class="relative z-10 text-center py-24 md:py-48">
+		<div>
+			<audio id="audioPlayer" controls>
+				<source src="./musicas/dia_branco.mp3" type="audio/mpeg">
+				<source src="./musicas/dia_branco.ogg" type="audio/ogg">
+				Seu navegador não suporta o elemento de áudio.
+			</audio>
+			<button onclick="document.getElementById('audioPlayer').play()"></button>
+		</div>
 		<h1 class="text-white text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-12">{{
 			home.title }}</h1>
 		<a href="{{ home.button_link }}"
@@ -51,7 +53,6 @@ layout: default
 
 	<img src="{{ home.image }}" class="w-full h-full absolute inset-0 object-cover opacity-70" />
 </div>
-
 {% if home.cta_title %}
 <div class="max-w-xl mx-auto text-center py-24 md:py-32">
 
