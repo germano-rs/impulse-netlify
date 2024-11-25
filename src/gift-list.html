@@ -2,24 +2,48 @@
 layout: default
 title: Lista de Presentes
 ---
-
+<div class="text-center py-12 px-12">
+    <p>Sabemos que escolher presentes de casamento pode ser um desafio.</p>
+    <p>
+        Por isso, pensamos em facilitar sua vida e te
+        mostrar como cada item desta lista faria
+        uma grande diferença na nossa nova rotina.
+    </p>
+    <p>
+        Aqui no site, você pode escolher o(s) presente(s) que mais combina(m) com você e com a gente e ir adicionando ao carrinho.
+        No final informaremos a chave PIX para pagamento e você terá um espaço para uma mensagem especial para os noivos.
+    </p>
+    <p> E claro, tudo com um toque de humor, porque nada mais divertido do
+        que ajudar dois recém-casados, não é?
+    </p>
+</div>
 <div class="text-center py-12 px-6">
     <h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">{{ products.title }}</h1>
     <p class="max-w-lg mx-auto">{{ products.description }}</p>
 </div>
 
-<div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8 text-center mt-12 pb-12">
-    {% for product in collections.products | reverse %}
-        <div class="col-span-1 row-span-1">
-            <div class="w-full h-52 relative">          
-                <a href="{{ product.url | url }}">
-                    <img src="{{ product.data.featured_image }}" class="absolute inset-0 w-full h-full object-cover" />
-                </a>
-            </div>
-            <div class="p-6">
-                <a href="{{ product.url | url }}" class="block font-semibold text-black mb-1">{{ product.data.title }}</a>
-                <div>{{ settings.currency_symbol }}{{ product.data.price }}</div>
-            </div>
+<div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8 text-center mt-12 pb-12" id="product-container">
+    {% for product in collections.products %}
+    <div class="col-span-1 row-span-1 product-item">
+        <div class="w-full h-52 relative">
+            <a href="{{ product.url | url }}">
+                <img src="{{ product.data.featured_image }}" class="absolute inset-0 w-full h-full object-cover" />
+            </a>
         </div>
+        <div class="p-6">
+            <a href="{{ product.url | url }}" class="block font-semibold text-black mb-1">{{ product.data.title }}</a>
+            <div>{{ settings.currency_symbol }} {{ product.data.price }}</div>
+        </div>
+    </div>
     {% endfor %}
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('product-container');
+        const items = Array.from(container.getElementsByClassName('product-item'));
+        const shuffledItems = items.sort(() => Math.random() - 0.5);
+        container.innerHTML = '';
+        shuffledItems.forEach(item => container.appendChild(item));
+    });
+</script>

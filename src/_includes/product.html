@@ -86,7 +86,7 @@ layout: default
 
 			<!-- <div class="text-xs text-gray-600 uppercase font-semibold">Category</div> -->
 			<h2 class="mt-3 text-2xl mb-4 font-display text-black leading-tight max-w-sm">{{ title }}</h2>
-			<div class="mb-6">{{ settings.currency_symbol }}{{ price }} {% if compare_price %}<span class="text-xs ml-1 text-red-500 line-through">{{ settings.currency_symbol }}{{ compare_price }}</span>{% endif %}</div>
+			<div class="mb-6">{{ settings.currency_symbol }} {{ price }} {% if compare_price %}<span class="text-xs ml-1 text-red-500 line-through">{{ settings.currency_symbol }} {{ compare_price }}</span>{% endif %}</div>
 			<p class="text-sm leading-relaxed">{{ description }}</p>
 
 			{% if external_url %}
