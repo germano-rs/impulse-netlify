@@ -1,7 +1,7 @@
 ---
 title: Máquina Lava e Seca de Roupas
 description: Ah, a famosa máquina lava e seca! Vamos combinar, esse presente não é só para mim, é para o bem da humanidade (ou pelo menos da nossa casa). Com ela, adeus pilhas intermináveis de roupas para lavar e aquele dilema de "será que vai chover e a roupa vai ficar fedida?". Vocês estariam ajudando a garantir que a vida pós-casamento seja mais sobre diversão e menos sobre brigar com o varal. Quem não gostaria disso, né?
-price: 128.00
+price: 2999.00
 external_url: 
 pix_code: códigopix
 featured_image: https://i.postimg.cc/rFQRBf7q/lavadora1.jpg
