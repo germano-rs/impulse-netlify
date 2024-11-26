@@ -95,6 +95,12 @@ title: Shopping Cart
                         <button  class="block text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs">
                             Enviar mensagem
                         </button>
+                        <div class="flex justify-end">
+                            <button x-on:click="checkout()" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
+                                <div>Checkout</div>
+                                <div x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</div>
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>			
