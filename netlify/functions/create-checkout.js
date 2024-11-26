@@ -40,7 +40,7 @@ exports.handler = async (event) => {
     });
 
     const session = await stripe.checkout.sessions.create({
-        success_url: `${process.env.URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${process.env.URL}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${process.env.URL}/cart?cancel`,
         allow_promotion_codes: true,
         payment_method_types: getPaymentMethods(),
