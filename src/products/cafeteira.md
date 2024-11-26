@@ -1,7 +1,7 @@
 ---
 title: Cafeteira Espresso
 description: Imagine começar o dia com um café fresquinho e encorajador. Isso é praticamente a receita para um casamento feliz, afinal, café resolve 90% dos problemas matinais. E ainda vai te garantir um convite vitalício para tomar aquele espresso aqui em casa.
-price: 1.00
+price: 457.00
 external_url: 
 pix_code: códigopix
 featured_image: https://i.postimg.cc/C1638TQc/cafeteira.jpg
