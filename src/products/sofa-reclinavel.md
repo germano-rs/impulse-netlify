@@ -1,7 +1,7 @@
 ---
 title: Sofá Reclinável
 description: Maratonas longas pedem conforto premium. Esse presente seria meu trono para reinar sobre todos os episódios. Todo casal merece um trono digno ao fim do dia. Conforto e descanso depois de um dia cheio é tudo o que precisamos. Se você quer nos ver relaxando com sorrisos largos, considere escolher esse presente no site.
-price: 2.469.00
+price: 2469.00
 external_url: 
 pix_code: códigopix
 featured_image: https://i.postimg.cc/26n3q77n/image.png
