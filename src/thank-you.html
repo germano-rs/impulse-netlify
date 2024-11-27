@@ -4,10 +4,37 @@ layout: default
 <div x-data="success()" x-init="init()">
 	<div>
 		<div class="text-center py-12 px-6">
-			<h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">Agradecemos de coração o presente!</h1>
+			<h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">Agradecemos de coração o
+				presente!</h1>
 			<p class="max-w-lg mx-auto">Seu carinho significa muito para nós. Estamos muito felizes por ter você fazendo
 				parte deste momento especial.</p>
 		</div>
+		<div class="px-6 md:px-12 py-6 text-center">
+			<form name="contact" netlify data-netlify="true" netlify-honeypot="bot-field" action="/">
+				<input type="hidden" name="form-name" value="contact">
+				<p class="hidden">
+					<label>Don’t fill this out if you're human: <input name="bot-field"></label>
+				</p>
+				<div>
+					<label class="block text-base tracking-tight text-gray-600">Nome(s)</label>
+					<input name="name" type="text" placeholder="Nome(s)" required
+						class="mt-2 w-3/4 max-w-md mx-auto border-none text-sm p-4 bg-gray-100 text-gray-700" />
+				</div>
+				<div class="mt-6">
+					<label class="block text-base tracking-tight text-gray-600">Mensagem aos noivos</label>
+					<textarea name="message" rows="8"
+						placeholder="Uma mensagem de carinho é um grande presente para nós!" required
+						class="mt-2 w-3/4 max-w-md mx-auto border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
+				</div>
+				<div class="mt-6 flex justify-center">
+					<button
+						class="block font-semibold px-6 py-3 bg-gray-900 text-gray-100 uppercase text-xs rounded">
+						Enviar mensagem
+					</button>
+				</div>
+			</form>
+		</div>
+		
 		<div class="flex items-center justify-center w-full h-full mx-auto mb-6">
 			<img src="https://i.postimg.cc/zDM2dP5n/04df4d29-13e3-4784-b887-76e18b684fbd.jpg" class="w-full max-w-md" />
 		</div>
