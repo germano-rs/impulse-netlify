@@ -2,113 +2,157 @@
 layout: default
 title: Shopping Cart
 ---
+
 <style>
-    #payGifts {
-      display: none; /* Inicialmente oculto */
-    }
-  </style>
+  #payGifts, #pixInfo {
+    display: none; /* Inicialmente oculto */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .button-container button {
+    margin: 0.5rem;
+  }
+</style>
+
 <div x-data="basket()" x-init="init()" class="container mx-auto px-6 mb-12 py-12">
 
-    <template x-if="loading">
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <svg class="w-8 h-8 text-white relative animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-        </div>
-    </template>
-
-    <template x-if="total_quantity > 0">
-        <div>
-                
-            <h1 class="text-2xl font-display text-black leading-tight">Presentes aos noivos (<span x-text="total_quantity"></span>)</h1>
-
-            <div class="mt-6">
-
-                <template x-for="product in products">
-
-                    <div class="flex justify-between items-center pb-6 mb-6 border-b border-gray-200">
-                        <div class="flex items-center">
-                            <img :src="product.image" class="w-16 lg:w-32 h-16 lg:h-32 object-cover bg-gray-100" />
-                            <div class="px-6 lg:px-12 text-xs uppercase flex flex-col justify-center">
-                                <div class="text-gray-900 font-semibold" x-text="product.title"></div>
-                                <div class="mt-2" x-text="'{{ settings.currency_symbol }}'+product.price">{{ settings.currency_symbol }}0.00</div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 pl-4">
-                            <button x-on:click="removeProduct(product)" class="text-xs underline">Remover</button>
-                            <div class="text-xs text-gray-900" x-text="product.quantity">1</div>
-                            <div class="text-xs" x-text="'{{ settings.currency_symbol }}'+(product.price * product.quantity).toFixed(2)">{{ settings.currency_symbol }}0.00</div>
-                        </div>
-                    </div>
-
-                </template>
-
-            </div>
-            <div class="flex justify-end"><strong><p x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</p></strong></div>
-
-            <div class="flex justify-end">
-                <button onclick="paygifts()" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
-                    <div>Pagar</div>
-                </button>
-            </div>
-
-        </div>
-    </template>
-
-    <template x-if="total_quantity === 0">
-        <div>
-            <div class="text-center py-12 mb-12 px-6">
-                <h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">Não há nada ainda no carrinho de presentes aos noivos!</h1>
-                <p class="max-w-lg mx-auto">Volte para a página de presentes e escolha.</p>
-            </div>
-        </div>
-    </template>
-
-    <div id="payGifts">
-
-		<div class="z-50 bg-black bg-opacity-50 fixed inset-0 w-screen min-h-screen lg:h-screen lg:flex lg:justify-center lg:items-center p-12">
-			<div class="w-full max-w-sm bg-white text-xs uppercase shadow-2xl">
-                <div class="px-6 md:px-12 py-6 text-center">
-                    <div class="px-6 md:px-12 py-6 text-center">
-                        <p>Pague através da chave PIX:</p>
-                        <strong><p x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</p></strong>
-                        <p>38999101373</p><p>Telefone</p>
-                        <p>Beneficiária: Denise Maria Vilela Cardoso</p>
-                    </div>	
-                    <form name="contact" netlify data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hidden">
-                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                        </p>
-                        <div>
-                        <label class="block text-base tracking-tight text-gray-600">Nome(s)</label>
-                        <input name="name" type="text" placeholder="Nome(s)" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700" />
-                        </div>
-                        <div class="mt-6">
-                        <label class="block text-base tracking-tight text-gray-600">Mensagem aos noivos</label>
-                        <textarea name="message" rows="8" placeholder="Uma mensagem de carinho é um grande presente para nós!" required class="mt-2 w-full border-none text-sm p-4 bg-gray-100 text-gray-700"></textarea>
-                        </div>
-
-            
-                    <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <button x-on:click="closePayGifts()" type="button" class="block text-center font-semibold px-4 py-4 bg-gray-200 text-gray-500 uppercase text-xs">
-                            Voltar
-                        </button>
-                        <button  class="block text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs">
-                            Enviar mensagem
-                        </button>
-                        <button x-on:click="checkout()" class="block text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs">
-                            <div>Pagar com cartão</div>
-                            <div x-text="'{{ settings.currency_symbol }}'+total_price">{{ settings.currency_symbol }}00.00</div>
-                        </button>
-                    </div>
-                </form>
-            </div>			
-
-			</div>
-		</div>
+  <!-- Loading Spinner -->
+  <template x-if="loading">
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <svg class="w-8 h-8 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0 ..."></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0z"></path>
+      </svg>
     </div>
+  </template>
 
+  <!-- Carrinho de presentes -->
+  <template x-if="total_quantity > 0">
+    <div>
+      <h1 class="text-2xl font-display text-black leading-tight">
+        Presentes aos noivos (<span x-text="total_quantity"></span>)
+      </h1>
+      <div class="mt-6">
+        <template x-for="product in products">
+          <div class="flex justify-between items-center pb-6 mb-6 border-b border-gray-200">
+            <div class="flex items-center">
+              <img :src="product.image" class="w-16 lg:w-32 h-16 lg:h-32 object-cover bg-gray-100" />
+              <div class="px-6 lg:px-12 text-xs uppercase flex flex-col justify-center">
+                <div class="text-gray-900 font-semibold" x-text="product.title"></div>
+                <div class="mt-2" x-text="'{{ settings.currency_symbol }}'+product.price"></div>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 pl-4">
+              <button x-on:click="removeProduct(product)" class="text-xs underline">Remover</button>
+              <div class="text-xs text-gray-900" x-text="product.quantity"></div>
+              <div class="text-xs" x-text="'{{ settings.currency_symbol }}'+(product.price * product.quantity).toFixed(2)"></div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <div class="flex justify-end">
+        <strong>
+          <p x-text="'{{ settings.currency_symbol }}'+total_price"></p>
+        </strong>
+      </div>
+      <div class="flex justify-end">
+        <button onclick="paygifts()" class="mt-4 w-48 inline-block text-center font-semibold px-12 py-2 bg-gray-900 text-gray-100 uppercase text-xs">
+          Pagar
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Carrinho vazio -->
+  <template x-if="total_quantity === 0">
+    <div class="text-center py-12 mb-12 px-6">
+      <h1 class="text-3xl lg:text-4xl mb-6 font-display text-black leading-tight">Não há nada ainda no carrinho de presentes aos noivos!</h1>
+      <p class="max-w-lg mx-auto">Volte para a página de presentes e escolha.</p>
+    </div>
+  </template>
+
+  <!-- Modal Principal -->
+<div id="payGifts">
+  <div class="z-50 bg-black bg-opacity-50 fixed inset-0 w-screen min-h-screen lg:h-screen lg:flex lg:justify-center lg:items-center p-12">
+    <div class="w-full max-w-sm bg-white text-xs uppercase shadow-2xl">
+      <div class="px-6 md:px-12 py-6 text-center">
+        <p>VALOR TOTAL DOS ITENS</p>
+        <strong>
+          <p x-text="'{{ settings.currency_symbol }}'+total_price"></p>
+        </strong>
+
+      </div>
+      <div class="p-4 button-container">
+        <button onclick="openPixInfo()" class="flex-1 text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs rounded">
+          Pagar com PIX
+        </button>
+        <button x-on:click="checkout()" class="flex-1 text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs rounded">
+          Pagar com cartão
+        </button>
+        <button onclick="closePayGifts()" class="flex-1 text-center font-semibold px-4 py-4 bg-gray-200 text-gray-500 uppercase text-xs rounded">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
-
+  <!-- Modal PIX Info -->
+<div id="pixInfo" >
+    <div class="z-50 bg-black bg-opacity-50 fixed inset-0 w-screen min-h-screen lg:h-screen lg:flex lg:justify-center lg:items-center p-12">
+        <div class="w-full max-w-sm bg-white text-xs uppercase shadow-2xl">
+        <div class="px-6 md:px-12 py-6 text-center">
+            <p>Chave:</p>
+            <p id="pixKey">38999101373</p>
+            <p>Telefone</p>
+            <br>
+            <p>Beneficiária: Denise Maria Vilela Cardoso</p>
+            <p>Valor: <strong x-text="'{{ settings.currency_symbol }}'+total_price"></strong></p>
+        </div>
+        <div class="p-4 button-container">
+            <button onclick="copyPixKey()" class="w-full text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs rounded">
+                Copiar Chave PIX
+              </button>
+            <button onclick="window.location.href='/thank-you'" class="w-full text-center font-semibold px-4 py-4 bg-gray-900 text-gray-100 uppercase text-xs rounded">
+                PIX Pago
+                </button>
+            <button onclick="closePixInfo()"  class="flex-1 text-center font-semibold px-4 py-4 bg-gray-200 text-gray-500 uppercase text-xs rounded">
+            Fechar
+            </button>
+    
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+     function copyPixKey() {
+    const pixKey = document.getElementById('pixKey').innerText;
+    navigator.clipboard.writeText(pixKey).then(() => {
+      alert('Chave PIX copiada para a área de transferência!');
+    }).catch(err => {
+      console.error('Erro ao copiar a chave PIX: ', err);
+    });
+  }
+  function paygifts() {
+    document.getElementById('payGifts').style.display = 'block';
+  }
+  function closePayGifts() {
+    document.getElementById('payGifts').style.display = 'none';
+  }
+  function openPixInfo() {
+    document.getElementById('payGifts').style.display = 'none';
+    document.getElementById('pixInfo').style.display = 'block';
+  }
+  function closePixInfo() {
+    document.getElementById('pixInfo').style.display = 'none';
+  }
+</script>
 
 
 <script src="https://js.stripe.com/v3/"></script>
