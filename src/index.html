@@ -33,6 +33,8 @@ layout: default
 		<a href="{{ home.button_link }}"
 			class="inline-block bg-yellow-800 text-white uppercase text-sm tracking-widest font-heading px-8 py-2">{{
 			home.button_text }}</a>
+		<a href="#homenageados"
+			class="inline-block bg-gray-900 text-white uppercase text-sm tracking-widest font-heading px-8 py-2">Homenageados</a>
 		<a href="{{ home.button_link2 }}"
 			class="inline-block bg-yellow-800 text-white uppercase text-sm tracking-widest font-heading px-8 py-2">{{
 			home.button_text2 }}</a>
@@ -78,7 +80,7 @@ layout: default
 {% endif %}
 
 {% if home.cta_title2 %}
-<div class="max-w-xl mx-auto text-center py-12 md:py-12">
+<div id="homenageados" class="max-w-xl mx-auto text-center py-12 md:py-12">
 
 	<div class="w-24 h-2 bg-yellow-800 mb-4 mx-auto"></div>
 	<h2 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl mb-6">{{ home.cta_title2 }}</h2>
