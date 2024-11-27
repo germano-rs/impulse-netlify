@@ -2,7 +2,7 @@
 title: Nosso Casamento
 description: Vamos contar o que está todo mundo querendo saber... mas é 20 de dezembro deste ano mesmo? 😂
 
-image: https://i.postimg.cc/c4QCNgz9/19b3e072-2c74-4504-b5a9-3756e509823d-1.jpg
+image: https://i.postimg.cc/Gpn1MQhH/04df4d29-13e3-4784-b887-76e18b684fbd.jpg
 category: Nosso Casamento
 ---
  
