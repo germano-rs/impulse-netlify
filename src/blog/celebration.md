@@ -1,6 +1,6 @@
 ---
 title: Celebração
-description: A celebração do nosso casamento será na Igreja Matriz de Santo Antônio, às 11:00 horas, na Rua Desembargador Barata, 61, Centro, em Curvelo.
+description: A celebração do nosso casamento será na Igreja Matriz de Santo Antônio, às 11:00 horas, na Praça Tiradentes, 10, Centro, em Curvelo.
 image: https://i.postimg.cc/ZKWcJ7qV/matriz-1.jpg
 category: Celebração
 date: 2024-12-20T11:00:00Z
