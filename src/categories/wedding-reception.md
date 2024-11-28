@@ -1,4 +1,4 @@
 ---
 title: Recepção
 description: Após as celebrações, ofereceremos um almoço aos nossos convidados. O local será informado posteriormente.
-image: 
+image: https://i.postimg.cc/QxzyqGQj/image.png
