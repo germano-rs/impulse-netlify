@@ -10,8 +10,12 @@ title: Lista de Presentes
         uma grande diferença na nossa nova rotina.
     </p>
     <p>
-        Aqui no site, você pode escolher o(s) presente(s) que mais combina(m) com você e com a gente e ir adicionando ao carrinho.
-        No final informaremos a chave PIX para pagamento e você terá um espaço para uma mensagem especial para os noivos.
+        Aqui no site, você pode escolher o(s) presente(s) que mais combina(m) com você e com a gente e ir adicionando ao
+        carrinho.
+    </p>
+    <p>
+        No final poderá pagar através de PIX para a noiva ou cartão de crédito e você terá um espaço para uma mensagem especial para os
+        noivos.
     </p>
     <p> E claro, tudo com um toque de humor, porque nada mais divertido do
         que ajudar dois recém-casados, não é?
@@ -22,7 +26,8 @@ title: Lista de Presentes
     <p class="max-w-lg mx-auto">{{ products.description }}</p>
 </div>
 
-<div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8 text-center mt-12 pb-12" id="product-container">
+<div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8 text-center mt-12 pb-12"
+    id="product-container">
     {% for product in collections.products %}
     <div class="col-span-1 row-span-1 product-item">
         <div class="w-full h-52 relative">
@@ -39,7 +44,7 @@ title: Lista de Presentes
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById('product-container');
         const items = Array.from(container.getElementsByClassName('product-item'));
         const shuffledItems = items.sort(() => Math.random() - 0.5);
