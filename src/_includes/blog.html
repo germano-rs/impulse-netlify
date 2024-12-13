@@ -11,7 +11,9 @@ prism: true
     <h2 class="mt-4 uppercase tracking-widest text-xs text-gray-600">{{ date | readableDate }}</h2>
     <h1 class="font-display text-2xl md:text-3xl text-gray-900 mt-4">{{title}}</h1>
     <p class="mt-4"></p>
-
+    <a class="text-black" href="{{ link }}">
+        {{ link }}</h3>
+    </a>
     <div class="prose prose-sm sm:prose lg:prose-lg mt-6">
         {{description | safe}}
         <br>
