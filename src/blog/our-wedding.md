@@ -2,7 +2,7 @@
 title: Nosso Casamento
 description: Vamos contar o que está todo mundo querendo saber... mas é 20 de dezembro deste ano mesmo? 😂
 
-image: https://i.postimg.cc/Gpn1MQhH/04df4d29-13e3-4784-b887-76e18b684fbd.jpg
+image: https://i.postimg.cc/mgcWv932/IMG-2688.jpg
 category: Nosso Casamento
 ---
  
@@ -17,3 +17,5 @@ E ai não teve jeito, Germano vai fechar 2024 casado... Quem diria, hein? 😂
 Então, meu querido familiar ou amigo, prometemos que a culpa desse convite de última hora não foi nossa (ok, talvez um pouquinho). Estamos aqui enfrentando a missão impossível de organizar um casamento em 45 dias! Ufa... Mas, todos os dias colocamos Deus a frente de cada desafio e, com Ele guiando cada decisão e acalmando nossos corações, temos certeza de que tudo dará certo e será lindo!
 
 Agora é só dizer que sim e vir comemorar com a gente. Afinal, o amor não espera, e a nossa comemoração também não!
+
+![foto1](https://i.postimg.cc/CKyX9QLm/IMG-2910.jpg)

@@ -1,12 +1,12 @@
 ---
 title: Essa é a nossa história
 description: Nossas vidas se cruzaram de forma inesperada, e, desde então, construímos juntos uma história repleta de amor, amizade e cumplicidade.
-image: https://i.postimg.cc/kG1CD2zx/Design-sem-nome-9.png
+image: https://i.postimg.cc/7hPpmJY4/IMG-2652.jpg
 date: 
 category: Nosso Casamento
 images:
-  - url: "https://i.postimg.cc/kG1CD2zx/Design-sem-nome-9.png"
-  - url: "https://i.postimg.cc/c4fqKwGf/Whats-App-Image-2024-11-20-at-18-38-46.jpg"
+  - url: "https://i.postimg.cc/HnSFKWVy/IMG-2635.jpg"
+  - url: "https://i.postimg.cc/HnSFKWVy/IMG-2635.jpg"
 ---
 
 Nós nos conhecemos nos corredores da FACIC, faculdade onde os dois davam aula. Na época, ele da turma da balada e eu não interagia muito. Mas com o tempo e muito investimento da parte dele, as conversas passaram a ser mais frequentes até se tornarem cotidianas... E desde então, não houve mais nenhum dia em que um não estivesse presente na vida do outro. 
@@ -17,4 +17,4 @@ Hoje, 8 anos depois, estamos preparando o próximo passo em nossa jornada: dizer
 Com carinho,
 Denise e Germano.
 
-![foto1](https://i.postimg.cc/c4fqKwGf/Whats-App-Image-2024-11-20-at-18-38-46.jpg)
+![foto1](https://i.postimg.cc/HnSFKWVy/IMG-2635.jpg)
